@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department">
+	<parameter name="URL" value="'personal_loan_department.com'"></parameter>
+	<parameter name="API_key/username" value="username1 for api key"></parameter>
+
+	<test name="personal loan">
+		<!--all personal loan test cases grouped here-->
+		<!-- test tag represents module/folder, there may be multiple modules -->
+
+		<!-- we need to add class in classes tag in which that Smoke tag is added -->
+		<!-- smoke tags only from classes added below will be considered for exlude or include -->
+		<groups>
+			<run>
+				<include name="Smoke"></include>
+				<!-- <exclude name="Smoke"></exclude> -->
+			</run>
+		</groups>
+
+		<classes>
+
+			<!-- it contains test cases -->
+			<class name="testNG.Ploan" />
+			<class name="testNG.day1" />
+		</classes>
+	</test> <!-- personal loan -->
+
+	<test name="Car loan">
+
+		<classes>
+
+			<!-- it contains test cases -->
+			<class name="testNG.CarLoan">
+				<methods>
+					<!-- <include name="mobileCarLoan"></include> -->
+					<include name="mobileCar.*"></include>
+					<!--<exclude name="mobileCarLoan"></exclude> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite> <!-- Loan Department -->
