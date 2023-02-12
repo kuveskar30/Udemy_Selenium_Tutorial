@@ -25,8 +25,7 @@ public class CalenderHandeling {
 	public static void main(String[] args) throws InterruptedException {
 
 		// 1. chrome browser launching
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 		// waits
 		WebDriverWait w = new WebDriverWait(d1, Duration.ofSeconds(10));
@@ -41,11 +40,11 @@ public class CalenderHandeling {
 //		Thread.sleep(3000);
 		d1.findElement(By.cssSelector("#form-field-travel_comp_date")).click();
 
-		String required_month = "August";
+		String required_month = "december";
 
 		while (!(d1.findElement(By.xpath(
 				"//div[@class='flatpickr-month']/div[@class='flatpickr-current-month']/span[@class='cur-month']"))
-				.getText().contains(required_month))) {
+				.getText().equalsIgnoreCase(required_month))) {
 			d1.findElement(By.cssSelector(".flatpickr-next-month")).click();
 			// css selector were causing some problem i think it was selection transition
 			// element
@@ -64,7 +63,7 @@ public class CalenderHandeling {
 
 		for (int j = 0; j < dates.size(); j++) {
 			String date_text = d1.findElements(By.cssSelector(".flatpickr-day ")).get(j).getText();
-			if (date_text.equalsIgnoreCase("25")) {
+			if (date_text.equalsIgnoreCase("21")) {
 				d1.findElements(By.cssSelector(".flatpickr-day ")).get(j).click();
 //				Thread.sleep(1000);
 				break;

@@ -14,8 +14,7 @@ public class Asiignment8 {
 
 	public static void main(String[] args) throws InterruptedException {
 		// 1. chrome browser launching
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 		WebDriverWait w = new WebDriverWait(d1, Duration.ofSeconds(10));
 

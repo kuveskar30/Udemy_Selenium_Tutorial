@@ -13,14 +13,15 @@ public class Screenshots {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 		// launching browser
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
+		ChromeDriver d2 = new ChromeDriver();
 
 		d1.get("https://rahulshettyacademy.com/AutomationPractice/");
 		
 		Thread.sleep(2000);
 		File src = ((TakesScreenshot) d1).getScreenshotAs(OutputType.FILE);
+		System.out.println(src);
 		//common.io jar is required for using FileUtils I have taken common.io in pom.xml file from maven website 
 		FileUtils.copyFile(src, new File("E:\\pratik30\\Software testing\\screenshots\\screenshot.png"));
 

@@ -10,12 +10,11 @@ public class StaticDropdown {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 		
 		d1.get("https://rahulshettyacademy.com/dropdownsPractise/");
-		
+		d1.manage().window().maximize();
 		//Static Dropdown
 		
 		//
@@ -34,7 +33,7 @@ public class StaticDropdown {
 		System.out.println(dropdown.getFirstSelectedOption().getText());
 		
 		Thread.sleep(10000);
-		d1.quit();
+//		d1.quit();
 	}
 
 }

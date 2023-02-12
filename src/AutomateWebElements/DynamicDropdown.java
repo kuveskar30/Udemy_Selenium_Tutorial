@@ -10,8 +10,7 @@ public class DynamicDropdown {
 		//dynamic dropdown
 		//option comes in HTML only after clicking on dropdown
 		//if search before clicking you won't find option in HTML
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 		
 		d1.get("https://rahulshettyacademy.com/dropdownsPractise/");

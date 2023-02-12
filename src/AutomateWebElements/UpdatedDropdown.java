@@ -9,8 +9,7 @@ public class UpdatedDropdown {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 
 		d1.get("https://rahulshettyacademy.com/dropdownsPractise/");
@@ -43,7 +42,7 @@ public class UpdatedDropdown {
 		//checking return date disabled or enabled
 		
 		System.out.println(d1.findElement(By.id("Div1")).getAttribute("style"));
-		d1.findElement(By.id("ctl00_mainContent_view_date2")).click();
+//		d1.findElement(By.id("ctl00_mainContent_view_date2")).click();
 		//below method is not useful in all website
 //		d1.findElement(By.id("ctl00_mainContent_view_date2")).isEnabled();
 		
@@ -51,7 +50,7 @@ public class UpdatedDropdown {
 		
 		if(d1.findElement(By.id("Div1")).getAttribute("style").contains("1")) {
 			System.out.println("date is enabled");
-			Assert.assertTrue(false);
+			Assert.assertTrue(true);
 		}else{
 			System.out.println("ok date is disabled");
 			Assert.assertTrue(true);

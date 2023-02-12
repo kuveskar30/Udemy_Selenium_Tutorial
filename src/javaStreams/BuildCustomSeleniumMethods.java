@@ -12,8 +12,7 @@ public class BuildCustomSeleniumMethods {
 
 	public static void main(String[] args) {
 		// launching browser
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 
 		d1.get("https://rahulshettyacademy.com/seleniumPractise/#/offers");
@@ -23,7 +22,7 @@ public class BuildCustomSeleniumMethods {
 		do {
 			List<WebElement> table_elements = d1.findElements(By.xpath("//tr/td[1]"));
 
-			price = table_elements.stream().filter(s -> s.getText().contains("Carrot"))
+			price = table_elements.stream().filter(s -> s.getText().contains("Cherry"))
 					.map(s -> getVeggiePrice(s)).collect(Collectors.toList());
 
 			if (price.size() < 1) {
@@ -31,7 +30,7 @@ public class BuildCustomSeleniumMethods {
 			}
 		} while (price.size() < 1);
 		
-		System.out.println(price);
+		System.out.println(price.get(0));
 
 	}
 

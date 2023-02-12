@@ -7,7 +7,7 @@
 	<parameter name="URL" value="'personal_loan_department.com'"></parameter>
 	<parameter name="API_key/username" value="username1 for api key"></parameter>
 
-	<test name="personal loan" >
+	<test name="personal loan">
 		<classes>
 			<class name="testNG.Ploan" />
 			<class name="testNG.day1" />

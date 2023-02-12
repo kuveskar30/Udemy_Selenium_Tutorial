@@ -8,8 +8,7 @@ public class Locators {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 
 		// it waits for object to show
@@ -23,7 +22,7 @@ public class Locators {
 		d1.findElement(By.name("inputPassword")).sendKeys("abcd");
 		Thread.sleep(1000);
 		d1.findElement(By.className("signInBtn")).click();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		//if i run this line without implicitlyWait then element not found error will come
 		System.out.println(d1.findElement(By.cssSelector("p.error")).getText());
 		

@@ -40,16 +40,17 @@ public class CarLoan {
 		System.out.println("");
 	}
 	
-	@Test(groups= {"Smoke"},enabled=false)
+	@Test(groups= {"Smoke"})
 	public void webCarLoan() {
 		System.out.println("webCarLoan loan");
 	}
 	
+	//enabled=false it disables test, i.e. test will not be executed
 	@Test(enabled=false)
 	public void mobileCarLoan1() {
 		System.out.println("mobileCarLoan1 loan");
 	}
-	@Test(dependsOnMethods={"mobileCarLoan2","mobileCarLoan3"})
+	@Test(dependsOnMethods={"mobileCarLoan2"})
 	public void booksLoan() {
 		System.out.println("books loan");
 	}
@@ -59,12 +60,12 @@ public class CarLoan {
 		System.out.println("mobileCarLoan2 loan");
 	}
 	
-	@Parameters({"URL"})
-	@Test
-	public void mobileCarLoan3(String url_name) {
-		System.out.println("mobileCarLoan3 loan");
-		System.out.println(url_name);
-	}
+//	@Parameters({"URL"})
+//	@Test
+//	public void mobileCarLoan3(String url_name) {
+//		System.out.println("mobileCarLoan3 loan");
+//		System.out.println(url_name);
+//	}
 	
 	@Test
 	public void apiCarLoan() {

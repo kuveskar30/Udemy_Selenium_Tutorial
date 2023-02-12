@@ -10,18 +10,13 @@
 
 		<!-- we need to add class in classes tag in which that Smoke tag is added -->
 		<!-- smoke tags only from classes added below will be considered for exlude or include -->
-		<groups>
-			<run>
-				<include name="Smoke"></include>
-				<!-- <exclude name="Smoke"></exclude> -->
-			</run>
-		</groups>
+
 
 		<classes>
 
 			<!-- it contains test cases -->
 			<class name="testNG.Ploan" />
-			<class name="testNG.day1" />
+
 		</classes>
 	</test> <!-- personal loan -->
 

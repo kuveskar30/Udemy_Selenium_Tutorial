@@ -1,14 +1,8 @@
 package section13;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SSLCertificationsHandeling {
 
@@ -27,9 +21,8 @@ public class SSLCertificationsHandeling {
 		ChromeOptions options = new ChromeOptions();
 		options.setAcceptInsecureCerts(true);
 		// 1. chrome browser launching
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
-		WebDriver d1 = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
+		WebDriver d1 = new ChromeDriver(options);
 
 //		FirefoxOptions options1 = new FirefoxOptions();
 //		options1.setAcceptInsecureCerts(true);

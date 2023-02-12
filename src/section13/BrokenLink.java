@@ -18,8 +18,7 @@ public class BrokenLink {
 
 	public static void main(String[] args) throws MalformedURLException, IOException {
 		// launching browser
-		System.setProperty("webdriver.chrome.driver",
-				"E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\Selenium_chrome_driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\pratik30\\Software testing\\Udemy_selenium_course\\Selenium_drivers_for_browsers\\chromedriver.exe");
 		WebDriver d1 = new ChromeDriver();
 
 		d1.get("https://rahulshettyacademy.com/AutomationPractice/");
@@ -30,9 +29,9 @@ public class BrokenLink {
 		SoftAssert a = new SoftAssert();
 		
 		for(WebElement link:links) {
-			String url = link.getAttribute("href");
-			
-			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+			String url_String = link.getAttribute("href");
+			URL url_object = new URL(url_String);
+			HttpURLConnection conn = (HttpURLConnection)url_object.openConnection();
 			conn.setRequestMethod("HEAD");
 			conn.connect();
 			int responseCode = conn.getResponseCode();
@@ -49,7 +48,6 @@ public class BrokenLink {
 		//it will show failed assertions and will stop the script
 		a.assertAll();
 		System.out.println("******");
-		
 		
 		
 		

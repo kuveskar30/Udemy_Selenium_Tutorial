@@ -7,15 +7,17 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class Ploan {
+	//@BeforeTest,@AfterTest,@BeforeSuite and @AfterSuite are related with xml
+	
 	// @BeforeTest annotation scope is for test tag only
-	// it will execute before all methods in corresponding test tag
+	// it will execute only once before all Tests having @Test annotation
 	@BeforeTest
 	public void beforeTest() {
 		System.out.println("This is before test code of Ploan");
 	}
 
 	// @AfterTest annotation scope is for test tag only
-	// it will execute after all methods in corresponding test tag
+	// it will execute only once after completing all tests having @Test annotation
 	@AfterTest
 	public void afterTest() {
 		System.out.println("This is after test code of PLoan");
@@ -30,6 +32,16 @@ public class Ploan {
 		System.out.println("personal loan");
 		System.out.println(url_name);
 		System.out.println(api_key);
+	}
+	
+	@Test
+	public void demo1() {
+		System.out.println("demo1");
+	}
+	
+	@Test
+	public void demo2() {
+		System.out.println("demo2 ploan test");
 	}
 
 }
